@@ -1,5 +1,11 @@
-import { Link } from 'react-router-dom';
-import { PageTransition } from '../components/PageTransition';
+import { Link } from "react-router-dom";
+import { PageTransition } from "../components/PageTransition";
+import {
+  GitHubButton,
+  LinkedInButton,
+  EmailButton,
+  ResumeButton,
+} from "../components/socials";
 
 export function Hero() {
   return (
@@ -8,27 +14,25 @@ export function Hero() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 opacity-0 animate-fadeInUp">
             <div className="text-[#a3be8c] mb-4">
-              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat intro.txt
+              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat
+              intro.txt
             </div>
-            <p className="text-xl text-[#5e81ac] mb-4">
-              Software Engineer
+            <p className="text-xl text-[#5e81ac] mb-4">Software Engineer</p>
+            <p className="mb-6 max-w-2xl">Hi, I'm Luke 😁</p>
+            <p>
+              Welcome to my developer portfolio!! Try out the interactive
+              terminal below!
             </p>
-            <p className="mb-6 max-w-2xl">
-				Hi, I'm Luke 👋
-			</p>
-			<p>
-				Welcome to my developer portfolio!! Try out the interactive terminal below!
-			</p>
           </div>
 
           <div className="flex gap-3 flex-wrap opacity-0 animate-fadeInUp delay-200">
-            <Link 
+            <Link
               to="/projects"
               className="px-6 py-3 bg-[#a3be8c] text-[#1e1e1e] hover:bg-[#b8d8a0] transition-colors"
             >
               View Projects
             </Link>
-            <Link 
+            <Link
               to="/contact"
               className="px-6 py-3 border border-[#a3be8c] text-[#a3be8c] hover:bg-[#a3be8c]/10 transition-colors"
             >
@@ -41,11 +45,11 @@ export function Hero() {
               <span className="text-[#a3be8c]">$</span>
               <span>ls socials/</span>
             </div>
-            <div className="pl-4 text-sm">
-              <span className="text-[#5e81ac]">LinkedIn</span>{' '}
-              <span className="text-[#88c0d0]">Github</span>{' '}
-              <span className="text-[#5e81ac]">Email</span>{' '}
-              <span className="text-[#88c0d0]">Resume</span>
+            <div className="pl-4 text-sm flex col gap-4 items-center">
+              <GitHubButton />
+              <LinkedInButton />
+              <EmailButton />
+              <ResumeButton />
             </div>
           </div>
         </div>

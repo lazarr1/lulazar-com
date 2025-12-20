@@ -17,7 +17,7 @@ export function Navigation() {
           to="/"
           className="text-[#a3be8c] hover:text-[#b8d8a0] transition-colors"
         >
-          &lt;YN /&gt;
+          &lt;lulazar.com /&gt;
         </Link>
         <div className="flex gap-6">
           {navItems.map((item) => (

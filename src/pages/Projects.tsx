@@ -39,7 +39,7 @@ export function Projects() {
         <div className="max-w-4xl mx-auto w-full">
           <div className="mb-8 opacity-0 animate-slideInLeft">
             <div className="text-[#a3be8c] mb-4">
-              <span className="text-[#808080]">user@portfolio:~</span> ls projects/
+              <span className="text-[#808080]">lukelazar@portfolio:~</span> ls projects/
             </div>
             <h2>Projects</h2>
           </div>

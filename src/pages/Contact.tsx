@@ -8,7 +8,7 @@ export function Contact() {
         <div className="max-w-3xl mx-auto w-full">
           <div className="mb-8 opacity-0 animate-slideInLeft">
             <div className="text-[#a3be8c] mb-4">
-              <span className="text-[#808080]">user@portfolio:~</span> cat contact.txt
+              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat contact.txt
             </div>
             <h2>Get In Touch</h2>
           </div>
