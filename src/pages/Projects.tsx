@@ -1,0 +1,93 @@
+import { ExternalLink, Github } from "lucide-react";
+import { PageTransition } from '../components/PageTransition';
+
+const projects = [
+  {
+    title: 'Circuit Simulator',
+    description: 'Web-based circuit simulator with drag-and-drop components and real-time simulation. Built with vanilla JavaScript and Canvas API.',
+    tech: ['JavaScript', 'Canvas API', 'HTML/CSS'],
+    githubUrl: '#',
+    liveUrl: '#',
+  },
+  {
+    title: 'Collaborative Editor',
+    description: 'Real-time collaborative text editor with WebSocket synchronization and conflict resolution.',
+    tech: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
+    githubUrl: '#',
+    liveUrl: '#'
+  },
+  {
+    title: 'Task Manager CLI',
+    description: 'Command-line task management tool with project organization and time tracking.',
+    tech: ['Python', 'SQLite', 'Rich'],
+    githubUrl: '#',
+    liveUrl: '#'
+  },
+  {
+    title: 'Performance Dashboard',
+    description: 'Analytics dashboard for tracking web application performance metrics and user behavior.',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis'],
+    githubUrl: '#',
+    liveUrl: '#'
+  }
+];
+
+export function Projects() {
+  return (
+    <PageTransition>
+      <section className="min-h-screen px-4 py-24">
+        <div className="max-w-4xl mx-auto w-full">
+          <div className="mb-8 opacity-0 animate-slideInLeft">
+            <div className="text-[#a3be8c] mb-4">
+              <span className="text-[#808080]">user@portfolio:~</span> ls projects/
+            </div>
+            <h2>Projects</h2>
+          </div>
+
+          <div className="space-y-4 pb-12">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="border border-[#3a3a3a] p-6 hover:border-[#a3be8c] transition-all bg-[#252526] opacity-0 animate-fadeInUp"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-[#d4d4d4]">{project.title}</h3>
+                  <div className="flex gap-3 ml-4">
+                    <a
+                      href={project.githubUrl}
+                      className="text-[#808080] hover:text-[#a3be8c] transition-colors"
+                      aria-label="GitHub"
+                    >
+                      <Github size={20} />
+                    </a>
+                    <a
+                      href={project.liveUrl}
+                      className="text-[#808080] hover:text-[#88c0d0] transition-colors"
+                      aria-label="Live demo"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  </div>
+                </div>
+
+                <p className="text-[#808080] mb-4 text-sm">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#5e81ac] text-xs"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </PageTransition>
+  );
+}
