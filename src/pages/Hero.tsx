@@ -8,19 +8,17 @@ export function Hero() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 opacity-0 animate-fadeInUp">
             <div className="text-[#a3be8c] mb-4">
-              <span className="text-[#808080]">user@portfolio:~</span> cat intro.txt
+              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat intro.txt
             </div>
-            <h1 className="mb-6">
-              Your Name
-            </h1>
             <p className="text-xl text-[#5e81ac] mb-4">
               Software Engineer
             </p>
-            <p className="text-[#808080] mb-6 max-w-2xl">
-              Building web applications and tools. Currently working with React, TypeScript, 
-              and Node.js. Interested in systems programming and making software that's 
-              fast and useful.
-            </p>
+            <p className="mb-6 max-w-2xl">
+				Hi, I'm Luke 👋
+			</p>
+			<p>
+				Welcome to my developer portfolio!! Try out the interactive terminal below!
+			</p>
           </div>
 
           <div className="flex gap-3 flex-wrap opacity-0 animate-fadeInUp delay-200">
@@ -41,13 +39,13 @@ export function Hero() {
           <div className="mt-12 text-[#808080] opacity-0 animate-fadeInUp delay-400">
             <div className="flex gap-2 mb-2">
               <span className="text-[#a3be8c]">$</span>
-              <span>ls skills/</span>
+              <span>ls socials/</span>
             </div>
             <div className="pl-4 text-sm">
-              <span className="text-[#5e81ac]">languages/</span>{' '}
-              <span className="text-[#88c0d0]">frontend/</span>{' '}
-              <span className="text-[#5e81ac]">backend/</span>{' '}
-              <span className="text-[#88c0d0]">tools/</span>
+              <span className="text-[#5e81ac]">LinkedIn</span>{' '}
+              <span className="text-[#88c0d0]">Github</span>{' '}
+              <span className="text-[#5e81ac]">Email</span>{' '}
+              <span className="text-[#88c0d0]">Resume</span>
             </div>
           </div>
         </div>

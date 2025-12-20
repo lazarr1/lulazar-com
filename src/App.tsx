@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import { Navigation } from "./components/Navigation";
+import { Terminal } from "./components/Terminal";
 import { Hero } from "./pages/Hero";
 import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
@@ -29,6 +30,7 @@ export default function App() {
       <div className="min-h-screen bg-[#1e1e1e] text-[#d4d4d4]">
         <Navigation />
         <AnimatedRoutes />
+        <Terminal />
       </div>
     </Router>
   );
