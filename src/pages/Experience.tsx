@@ -1,74 +1,200 @@
-import { PageTransition } from '../components/PageTransition';
+import { useState } from "react";
+import { PageTransition } from "../components/PageTransition";
 
-const experiences = [
+interface Experience {
+  id: string;
+  company: string;
+  type: string;
+  position: string;
+  period: string;
+  description: string;
+  rotations?: {
+    title: string;
+    points: string[];
+    tags: string[];
+  }[];
+  points?: string[];
+  tags?: string[];
+}
+
+const experiences: Experience[] = [
   {
-    company: 'Company Name',
-    position: 'Software Engineer',
-    period: 'Jan 2023 - Present',
-    description: 'Working on web applications and backend services.',
-    points: [
-      'Built features for a product used by 100k+ users',
-      'Improved application performance and load times',
-      'Worked with React, Node.js, and PostgreSQL'
-    ]
+    id: "cochlear-ft",
+    company: "Cochlear",
+    type: "Full-Time",
+    position: "Graduate Engineer",
+    period: "February 2025 - Present",
+    description:
+      "Rotating across different engineering streams at Cochlear, gaining experience in various technical domains.",
+    rotations: [
+      {
+        title: "",
+        points: ["", ""],
+        tags: [],
+      },
+    ],
   },
   {
-    company: 'Previous Company',
-    position: 'Frontend Developer',
-    period: 'Jun 2022 - Dec 2022',
-    description: 'Contract work on an e-commerce platform.',
+    id: "cochlear-contract",
+    company: "Cochlear",
+    type: "Contract",
+    position: "Software Engineer",
+    period: "Jun 2024 - Feb 2025",
+    description:
+      "Contract position working on various software development projects.",
     points: [
-      'Developed reusable component library',
-      'Integrated payment processing with Stripe',
-      'Optimized checkout flow and conversion rates'
-    ]
-  }
+      "Contributed to the development of medical device software",
+      "Worked with cross-functional teams on product features",
+      "Implemented testing and quality assurance processes",
+    ],
+    tags: ["C++", "Python", "Medical Devices"],
+  },
+  {
+    id: "cochlear-intern",
+    company: "Cochlear",
+    type: "Internship",
+    position: "Software Engineering Intern",
+    period: "Nov 2023 - Feb 2024",
+    description: "Summer internship working on embedded systems and firmware.",
+    points: [
+      "Developed firmware for hearing implant devices",
+      "Participated in code reviews and testing",
+      "Learned embedded systems development practices",
+    ],
+    tags: ["C", "Embedded Systems", "Firmware"],
+  },
 ];
 
 const education = {
-  school: 'University Name',
-  degree: 'B.S. Computer Science',
-  period: 'Mar 2020 - Nov 2023',
-  note: 'Graduated with Honors'
+  school: "University Name",
+  degree: "B.S. Computer Science",
+  period: "Mar 2020 - Nov 2023",
+  note: "Graduated with Honors",
 };
 
 export function Experience() {
+  const [selectedId, setSelectedId] = useState(experiences[0].id);
+  const selected =
+    experiences.find((exp) => exp.id === selectedId) || experiences[0];
+
   return (
     <PageTransition>
       <section className="min-h-screen px-4 py-24">
-        <div className="max-w-3xl mx-auto w-full">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="mb-8 opacity-0 animate-slideInLeft">
             <div className="text-[#a3be8c] mb-4">
-              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat experience.log
+              <span className="text-[#808080]">user@portfolio:~</span> cat
+              experience.log
             </div>
-            <h2>Experience</h2>
+            <h2>Work Experience</h2>
           </div>
 
-          <div className="space-y-6 mb-16">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index} 
-                className="border border-[#3a3a3a] p-6 bg-[#252526] hover:border-[#a3be8c] transition-colors opacity-0 animate-fadeInUp"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
-                  <div>
-                    <h3 className="text-[#d4d4d4] mb-1">{exp.position}</h3>
-                    <div className="text-[#5e81ac]">{exp.company}</div>
-                  </div>
-                  <div className="text-sm text-[#808080]">{exp.period}</div>
-                </div>
-                <p className="text-[#808080] mb-4 text-sm">{exp.description}</p>
-                <ul className="space-y-2">
-                  {exp.points.map((point, i) => (
-                    <li key={i} className="text-[#808080] text-sm flex gap-3">
-                      <span className="text-[#a3be8c]">▪</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="flex gap-6 mb-16">
+            {/* Left sidebar - List of experiences */}
+            <div className="w-64 flex-shrink-0 opacity-0 animate-fadeInUp delay-100">
+              <div className="border border-[#3a3a3a] bg-[#252526]">
+                {experiences.map((exp) => (
+                  <button
+                    key={exp.id}
+                    onClick={() => setSelectedId(exp.id)}
+                    className={`w-full text-left px-4 py-3 border-b border-[#3a3a3a] last:border-b-0 transition-colors ${
+                      selectedId === exp.id
+                        ? "bg-[#2a2a3a] border-l-4 border-l-[#a3be8c]"
+                        : "hover:bg-[#2a2a3a]"
+                    }`}
+                  >
+                    <div className="text-[#d4d4d4] text-sm mb-1">
+                      {exp.company}
+                    </div>
+                    <div className="text-[#808080] text-xs">{exp.type}</div>
+                  </button>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right panel - Selected experience details */}
+            <div className="flex-1 opacity-0 animate-fadeInUp delay-200">
+              <div className="border border-[#3a3a3a] bg-[#252526] overflow-hidden">
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-[#d4d4d4] mb-2">
+                        {selected.position}
+                      </h3>
+                      <div className="text-[#5e81ac]">{selected.company}</div>
+                    </div>
+                    <div className="text-sm text-[#808080]">
+                      {selected.period}
+                    </div>
+                  </div>
+
+                  <p className="text-[#d4d4d4] mb-6 text-sm">
+                    {selected.description}
+                  </p>
+
+                  {/* Rotations if they exist */}
+                  {selected.rotations &&
+                    selected.rotations.map((rotation, index) => (
+                      <div key={index} className="mb-6">
+                        <h4 className="text-[#a3be8c] mb-4 text-sm">
+                          {rotation.title}
+                        </h4>
+                        <ul className="space-y-3 mb-4">
+                          {rotation.points.map((point, i) => (
+                            <li
+                              key={i}
+                              className="text-[#d4d4d4] text-sm flex gap-3"
+                            >
+                              <span className="text-[#a3be8c] mt-1">▸</span>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="flex flex-wrap gap-2">
+                          {rotation.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#5e81ac] text-xs"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+
+                  {/* Regular points if no rotations */}
+                  {selected.points && (
+                    <>
+                      <ul className="space-y-3 mb-4">
+                        {selected.points.map((point, i) => (
+                          <li
+                            key={i}
+                            className="text-[#d4d4d4] text-sm flex gap-3"
+                          >
+                            <span className="text-[#a3be8c] mt-1">▸</span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {selected.tags && (
+                        <div className="flex flex-wrap gap-2">
+                          {selected.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#5e81ac] text-xs"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="opacity-0 animate-fadeInUp delay-400 pb-12">
@@ -83,7 +209,9 @@ export function Experience() {
                 </div>
                 <div className="text-sm text-[#808080]">{education.period}</div>
               </div>
-              <div className="text-sm text-[#808080] italic">{education.note}</div>
+              <div className="text-sm text-[#808080] italic">
+                {education.note}
+              </div>
             </div>
           </div>
         </div>
