@@ -13,7 +13,7 @@ export function Hero() {
       <section className="min-h-screen flex items-center justify-center px-4 pt-20">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 opacity-0 animate-fadeInUp">
-            <div className="text-[#a3be8c] mb-4">
+            <div className="text-[#dfbfff] mb-4">
               <span className="text-[#808080]">lukelazar@portfolio:~</span> cat
               intro.txt
             </div>
@@ -43,7 +43,7 @@ export function Hero() {
           <div className="mt-12 text-[#808080] opacity-0 animate-fadeInUp delay-400">
             <div className="flex gap-2 mb-2">
               <span className="text-[#a3be8c]">$</span>
-              <span>ls socials/</span>
+              <span className="text-[#dfbfff]">ls socials/</span>
             </div>
             <div className="pl-4 text-sm flex col gap-4 items-center">
               <GitHubButton />
