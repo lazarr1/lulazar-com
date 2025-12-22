@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ImageCarousel } from "../components/carousel";
 import { PageTransition } from "../components/PageTransition";
 
 export function About() {
@@ -24,7 +25,7 @@ export function About() {
             </p>
             <p className="opacity-0 animate-fadeInUp delay-300">
               I really enjoy understanding how things work and breaking down
-              complex systems whether it's to debug, optimise performance or
+              complex systems. Whether it's to debug, optimise performance or
               build upon them. I also enjoy thinking deeply about challenging
               problems, planning effective solutions, and bringing them to life
               through software.
@@ -41,30 +42,34 @@ export function About() {
 
           <div className="opacity-0 animate-fadeInUp delay-400">
             <div className="mb-6 opacity-0 animate-slideInLeft">
-              <h2 className="text-[#5e81ac]">Hobbies and Interests</h2>
+              <h2 className="text-[#5e81ac]">Hobbies & Interests</h2>
             </div>
             <ul className="space-y-1 mb-12 pl-24">
-              <li className="text-[#808080] flex gap-3 pl-24">
+              <li className="flex gap-3 pl-24">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🚶‍♂️ Hikes</span>
               </li>
-              <li className="text-[#808080] flex gap-3">
+              <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>❓ Trivia</span>
               </li>
-              <li className="text-[#808080] flex gap-3">
+              <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🍳 Cooking</span>
               </li>
-              <li className="text-[#808080] flex gap-3">
+              <li className="flex gap-3">
+                <span className="text-[#a3be8c]">▪</span>
+                <span>🃏 Poker</span>
+              </li>
+              <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🎮 Video Games</span>
               </li>
-              <li className="text-[#808080] flex gap-3">
+              <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🤓 Reading</span>
               </li>
-              <li className="text-[#808080] flex gap-3">
+              <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🏋️ Gym</span>
               </li>
@@ -73,34 +78,48 @@ export function About() {
 
           <div className="opacity-0 animate-fadeInUp delay-400">
             <div className="mb-6 opacity-0 animate-slideInLeft">
-              <h2 className="text-[#5e81ac]">Skills</h2>
+              <h2 className="text-[#5e81ac]">Day in the Life</h2>
             </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="border border-[#3a3a3a] p-4 hover:border-[#a3be8c] transition-colors">
-                <div className="text-sm text-[#a3be8c] mb-3">Languages</div>
-                <div className="text-[#808080] text-sm">
-                  JavaScript, TypeScript, Python, Java, SQL
-                </div>
-              </div>
-              <div className="border border-[#3a3a3a] p-4 hover:border-[#a3be8c] transition-colors">
-                <div className="text-sm text-[#5e81ac] mb-3">Frontend</div>
-                <div className="text-[#808080] text-sm">
-                  React, Next.js, Tailwind CSS, HTML/CSS
-                </div>
-              </div>
-              <div className="border border-[#3a3a3a] p-4 hover:border-[#a3be8c] transition-colors">
-                <div className="text-sm text-[#88c0d0] mb-3">Backend</div>
-                <div className="text-[#808080] text-sm">
-                  Node.js, Express, PostgreSQL, MongoDB
-                </div>
-              </div>
-              <div className="border border-[#3a3a3a] p-4 hover:border-[#a3be8c] transition-colors">
-                <div className="text-sm text-[#a3be8c] mb-3">Tools</div>
-                <div className="text-[#808080] text-sm">
-                  Git, Docker, AWS, Linux, VS Code
-                </div>
-              </div>
-            </div>
+            <ImageCarousel
+              images={[
+                {
+                  src: "imgs/img1.jpeg",
+                  alt: "Lego Scout Trooper on 74-Z Speeder Bike",
+                },
+                {
+                  src: "imgs/img2.jpeg",
+                  alt: "Tyler the Creator Concert",
+                },
+                {
+                  src: "imgs/img3.jpeg",
+                  alt: "Salt bread tray",
+                },
+                {
+                  src: "imgs/img4.jpeg",
+                  alt: "Chill ass lizard chilling on water",
+                },
+                {
+                  src: "imgs/img5.jpeg",
+                  alt: "Cool person walking next to waterfall",
+                },
+                {
+                  src: "imgs/img6.jpeg",
+                  alt: "Sweet victory (Cake club winner award)",
+                },
+                {
+                  src: "imgs/img7.jpeg",
+                  alt: "Water cliff",
+                },
+                {
+                  src: "imgs/img8.jpeg",
+                  alt: "Tree mountain",
+                },
+                {
+                  src: "imgs/img9.jpeg",
+                  alt: "Poker winnings",
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
