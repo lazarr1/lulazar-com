@@ -28,22 +28,24 @@ export function ImageCarousel({ images }: Props) {
       {/* VIEWPORT */}
       <div className="overflow-hidden">
         <ul
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex gap-4 transition-transform duration-500 ease-in-out"
           style={{
-            transform: `translateX(-${(100 / VISIBLE_COUNT) * index}%)`,
+            transform: `translateX(-${
+              (100 / VISIBLE_COUNT) * index + 4 * index
+            }%)`,
           }}
         >
           {images.map((img, i) => (
             <li
               key={i}
-              className="w-1/4 flex-shrink-0 px-2"
+              className="w-1/4 flex-shrink-0"
               aria-hidden={i < index || i >= index + VISIBLE_COUNT}
             >
               <figure className="flex flex-col items-center text-center">
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="h-48 w-full object-cover rounded-lg"
+                  className="h-48 w-full object-cover rounded-xl shadow-md ring-1 ring-black/5"
                 />
               </figure>
             </li>
