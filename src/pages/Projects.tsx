@@ -1,35 +1,41 @@
-import { ExternalLink, Github } from "lucide-react";
-import { PageTransition } from '../components/PageTransition';
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { PageTransition } from "../components/PageTransition";
 
 const projects = [
   {
-    title: 'Circuit Simulator',
-    description: 'Web-based circuit simulator with drag-and-drop components and real-time simulation. Built with vanilla JavaScript and Canvas API.',
-    tech: ['JavaScript', 'Canvas API', 'HTML/CSS'],
-    githubUrl: '#',
-    liveUrl: '#',
+    title: "Circuit Simulator",
+    description:
+      "Web-based circuit simulator with drag-and-drop components and real-time simulation. Built with vanilla JavaScript and Canvas API.",
+    tech: ["JavaScript", "Canvas API", "HTML/CSS"],
+    src: "projects/circuit.png",
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
-    title: 'Collaborative Editor',
-    description: 'Real-time collaborative text editor with WebSocket synchronization and conflict resolution.',
-    tech: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    githubUrl: '#',
-    liveUrl: '#'
+    title: "Collaborative Editor",
+    description:
+      "Real-time collaborative text editor with WebSocket synchronization and conflict resolution.",
+    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
-    title: 'Task Manager CLI',
-    description: 'Command-line task management tool with project organization and time tracking.',
-    tech: ['Python', 'SQLite', 'Rich'],
-    githubUrl: '#',
-    liveUrl: '#'
+    title: "Task Manager CLI",
+    description:
+      "Command-line task management tool with project organization and time tracking.",
+    tech: ["Python", "SQLite", "Rich"],
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
-    title: 'Performance Dashboard',
-    description: 'Analytics dashboard for tracking web application performance metrics and user behavior.',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis'],
-    githubUrl: '#',
-    liveUrl: '#'
-  }
+    title: "Performance Dashboard",
+    description:
+      "Analytics dashboard for tracking web application performance metrics and user behavior.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Redis"],
+    githubUrl: "#",
+    liveUrl: "#",
+  },
 ];
 
 export function Projects() {
@@ -39,19 +45,28 @@ export function Projects() {
         <div className="max-w-4xl mx-auto w-full">
           <div className="mb-8 opacity-0 animate-slideInLeft">
             <div className="text-[#a3be8c] mb-4">
-              <span className="text-[#808080]">lukelazar@portfolio:~</span> ls projects/
+              <span className="text-[#808080]">lukelazar@portfolio:~</span> ls
+              projects/
             </div>
             <h2>Projects</h2>
           </div>
 
-          <div className="space-y-4 pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pb-12">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="border border-[#3a3a3a] p-6 hover:border-[#a3be8c] transition-all bg-[#252526] opacity-0 animate-fadeInUp"
+                className="border border-[#3a3a3a] rounded-lg p-4 hover:border-[#a3be8c] transition-all bg-[#252526] opacity-0 animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start justify-between mb-4">
+                {project.src && (
+                  <img
+                    src={project.src}
+                    alt={project.title}
+                    className="w-full h-40 object-cover rounded-md mb-4"
+                  />
+                )}
+
+                <div className="flex items-start justify-between mb-2">
                   <h3 className="text-[#d4d4d4]">{project.title}</h3>
                   <div className="flex gap-3 ml-4">
                     <a
@@ -59,7 +74,7 @@ export function Projects() {
                       className="text-[#808080] hover:text-[#a3be8c] transition-colors"
                       aria-label="GitHub"
                     >
-                      <Github size={20} />
+                      <FaGithub size={20} />
                     </a>
                     <a
                       href={project.liveUrl}
@@ -71,13 +86,15 @@ export function Projects() {
                   </div>
                 </div>
 
-                <p className="text-[#808080] mb-4 text-sm">{project.description}</p>
+                <p className="text-[#808080] mb-3 text-sm">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#5e81ac] text-xs"
+                      className="px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#5e81ac] text-xs rounded"
                     >
                       {tech}
                     </span>
