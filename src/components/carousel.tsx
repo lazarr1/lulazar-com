@@ -13,11 +13,11 @@ const VISIBLE_COUNT = 4;
 
 export function ImageCarousel({ images }: Props) {
   const [index, setIndex] = useState(0);
-
   const maxIndex = Math.max(0, images.length - VISIBLE_COUNT);
 
   const prev = () => setIndex((i) => Math.max(i - 1, 0));
   const next = () => setIndex((i) => Math.min(i + 1, maxIndex));
+  const goTo = (i: number) => setIndex(Math.min(Math.max(i, 0), maxIndex));
 
   return (
     <section
@@ -26,7 +26,7 @@ export function ImageCarousel({ images }: Props) {
       className="w-full max-w-5xl mx-auto"
     >
       {/* VIEWPORT */}
-      <div className="overflow-hidden">
+      <div className="overflow-hidden relative group">
         <ul
           className="flex gap-4 transition-transform duration-500 ease-in-out"
           style={{
@@ -38,10 +38,10 @@ export function ImageCarousel({ images }: Props) {
           {images.map((img, i) => (
             <li
               key={i}
-              className="w-1/4 flex-shrink-0"
+              className="w-1/4 flex-shrink-0 h-60"
               aria-hidden={i < index || i >= index + VISIBLE_COUNT}
             >
-              <figure className="flex flex-col items-center text-center">
+              <figure className="flex flex-col items-center text-center h-full">
                 <img
                   src={img.src}
                   alt={img.alt}
@@ -63,6 +63,22 @@ export function ImageCarousel({ images }: Props) {
         >
           ←
         </button>
+
+        {/* DOTS */}
+        <div className="mt-4 flex justify-center gap-3 text-9xl">
+          {Array.from({ length: images.length - 3 }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`rounded-full text-9xl transition-colors ${
+                i === index ? "text-[#808080]" : ""
+              }`}
+              aria-label={`Go to image ${i + 1}`}
+            >
+              •
+            </button>
+          ))}
+        </div>
 
         <button
           onClick={next}
