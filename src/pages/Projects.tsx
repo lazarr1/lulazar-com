@@ -6,6 +6,7 @@ import {
   FaReact,
   FaDocker,
   FaAws,
+  FaBrain,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -16,7 +17,11 @@ import {
   SiHtml5,
   SiCss3,
   SiSocketdotio,
+  SiOpencv,
   SiJavascript,
+  SiBlender,
+  SiNginx,
+  SiTailwindcss,
 } from "react-icons/si";
 import { PageTransition } from "../components/PageTransition";
 
@@ -40,33 +45,42 @@ const techIcons: Record<string, Element> = {
   ),
   Docker: <FaDocker size={14} />,
   AWS: <FaAws size={14} />,
+  "Machine Learning": <FaBrain size={14} />,
+  OpenCV: <SiOpencv size={14} />,
+  Blender: <SiBlender size={14} />,
+  Nginx: <SiNginx size={14} />,
+  TailwindCSS: <SiTailwindcss size={14} />,
 };
 
 const projects = [
   {
     title: "Circuit Simulator",
     description:
-      "Web-based circuit simulator with drag-and-drop components and real-time simulation. Built with vanilla JavaScript frontend and a C++ websocket Backend.",
-    tech: ["C++", "JavaScript", "HTML/CSS", "Docker", "AWS"],
+      "Web-based circuit simulator with drag-and-drop components and real-time simulation. \
+      Built with a vanilla JavaScript frontend and a C++ websocket Backend.",
+    tech: ["C++", "JavaScript", "HTML/CSS", "Docker", "AWS", "Nginx"],
     src: "projects/circuit.png",
-    githubUrl: "#",
-    liveUrl: "#",
+    githubUrl: "https://github.com/lazarr1/Electrical-Simulator",
+    liveUrl: "https://lulazar.com/circuit",
   },
   {
-    title: "Collaborative Editor",
+    title: "Automatic Exposure Bracketing for On Orbit Satellite Servicing",
     description:
-      "Real-time collaborative text editor with WebSocket synchronization and conflict resolution.",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
-    githubUrl: "#",
-    liveUrl: "#",
+      "A machine learning–based imaging system that studies how to capture clear images in \
+      space despite extreme lighting conditions: from bright sunlight to deep shadow.",
+    tech: ["Machine Learning", "Python", "OpenCV", "Blender"],
+    src: "projects/satellite.png",
+    githubUrl: "https://github.com/lazarr1/ExposureNet",
   },
   {
-    title: "Task Manager CLI",
+    title: "Developer Porfolio",
     description:
-      "Command-line task management tool with project organization and time tracking.",
-    tech: ["Python", "SQLite", "Rich"],
-    githubUrl: "#",
-    liveUrl: "#",
+      "Personal website to showcase my projects, skills and experience as an engineer. \
+    Features an interactive terminal with a hidden easter egg.",
+    tech: ["TypeScript", "React", "TailwindCSS", "Nginx", "AWS"],
+    src: "projects/developer.png",
+    githubUrl: "https://github.com/lazarr1/lulazar-com",
+    liveUrl: "lulazar.com",
   },
   {
     title: "Performance Dashboard",
@@ -95,14 +109,14 @@ export function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="border border-[#3a3a3a] rounded-lg p-6 hover:border-[#a3be8c] transition-all bg-[#252526] opacity-0 animate-fadeInUp"
+                className="border border-[#3a3a3a] rounded-lg p-6 transition-all bg-[#252526] opacity-0 animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {project.src && (
                   <img
                     src={project.src}
                     alt={project.title}
-                    className="w-full h-48 object-cover rounded-md mb-4"
+                    className="w-full h-50 object-cover mb-4"
                   />
                 )}
                 <div className="flex items-start justify-between mb-3">
@@ -115,13 +129,15 @@ export function Projects() {
                     >
                       <FaGithub size={20} />
                     </a>
-                    <a
-                      href={project.liveUrl}
-                      className="text-[#808080] hover:text-[#88c0d0] transition-colors"
-                      aria-label="Live demo"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        className="text-[#808080] hover:text-[#88c0d0] transition-colors"
+                        aria-label="Live demo"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
                 <p className="text-[#808080] mb-3 text-sm">
