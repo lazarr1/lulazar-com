@@ -7,6 +7,8 @@ import {
   FaDocker,
   FaAws,
   FaBrain,
+  FaMemory,
+  FaBluetooth,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -22,19 +24,22 @@ import {
   SiBlender,
   SiNginx,
   SiTailwindcss,
+  SiStmicroelectronics,
+  SiAndroid,
+  SiKotlin,
+  SiTerraform,
+  SiAmazoncognito,
 } from "react-icons/si";
+import { SlGraph } from "react-icons/sl";
 import { PageTransition } from "../components/PageTransition";
 
-const techIcons: Record<string, Element> = {
+export const techIcons: Record<string, Element> = {
   Python: <FaPython size={14} />,
   "Node.js": <FaNodeJs size={14} />,
   React: <FaReact size={14} />,
-  "Socket.io": <SiSocketdotio size={14} />,
   MongoDB: <SiMongodb size={14} />,
   "Next.js": <SiTypescript size={14} />,
   TypeScript: <SiTypescript size={14} />,
-  PostgreSQL: <SiPostgresql size={14} />,
-  Redis: <SiRedis size={14} />,
   "C++": <SiCplusplus size={14} />,
   JavaScript: <SiJavascript size={14} />,
   "HTML/CSS": (
@@ -50,6 +55,14 @@ const techIcons: Record<string, Element> = {
   Blender: <SiBlender size={14} />,
   Nginx: <SiNginx size={14} />,
   TailwindCSS: <SiTailwindcss size={14} />,
+  "Memory Virtualisation": <FaMemory size={14} />,
+  STM32: <SiStmicroelectronics size={14} />,
+  "Data Analysis": <SlGraph size={14} />,
+  "Android OS": <SiAndroid size={14} />,
+  Kotlin: <SiKotlin size={14} />,
+  Bluetooth: <FaBluetooth size={14} />,
+  Terraform: <SiTerraform size={14} />,
+  SSO: <SiAmazoncognito size={14} />,
 };
 
 const projects = [

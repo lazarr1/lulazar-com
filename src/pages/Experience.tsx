@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PageTransition } from "../components/PageTransition";
+import { techIcons } from "./Projects";
 
 interface Experience {
   id: string;
@@ -28,9 +29,61 @@ const experiences: Experience[] = [
       "Rotating across different engineering streams at Cochlear, gaining experience in various technical domains.",
     rotations: [
       {
-        title: "",
-        points: ["", ""],
-        tags: [],
+        title: "Rotation 4: Test Systems Egnineer",
+        points: [
+          "Designed a comprehensive firmware framework for STM32 microcontrollers, \
+           including hardware abstraction layers and an API wrapper to utilise on-board peripherals \
+           (I2C, SPI, GPIO, UART) simply via a simple internal protocol.",
+
+          "Engineered memory virtualisation through EEPROM emulation, mapping 8-bit logical flash \
+           memory requirements onto 64-bit NOR flash, ensuring seamless compatibility with team \
+           specifications.",
+
+          "Developed low-level OS code to efficiently manage MCU resources, providing robust \
+          peripheral control, modularity, and scalability for future embedded applications.",
+        ],
+        tags: ["C++", "Memory Virtualisation", "STM32"],
+      },
+      {
+        title: "Rotation 3: Machine Learning Engineer",
+        points: [
+          "Directed and delivered a comprehensive research package, including a detailed \
+          technical report, a fully documented codebase, and multiple presentations \
+          which successfully achieved technology-readiness level 3.",
+
+          "Designed and implemented deep learning pipelines for speech bandwidth \
+          extension for resource constrained platforms, optimizing for real-time \
+          low latency processing.",
+
+          "Developed signal processing models simulating microphone characteristics,\
+          including low-pass filtering, noise modeling, and denoising to generate \
+          realistic training datasets.",
+        ],
+        tags: ["Machine Learning", "Python", "Data Analysis"],
+      },
+      {
+        title: "Rotation 2: Android Developer",
+        points: [
+          "Independently diagnosed and resolved a critical connectivity bug within \
+          an internal test application, improving system reliability and reducing\
+          connection failures by approximately 30%.",
+
+          "Collaborated on the development of an internal Bluetooth test app, engaging\
+          in Agile Scrum processes, resolving legacy issues, and implementing \
+          incremental feature improvements to enhance usability and reliability.",
+        ],
+        tags: ["Kotlin", "Bluetooth", "Android OS"],
+      },
+      {
+        title: "Rotation 1: Clinical Cloud",
+        points: [
+          "Integrated authentication and access control using AWS Cognito to \
+          ensure secure multi-user access for an internal database tool.",
+
+          "Improved internal service reliability by deploying and operationalising \
+          an automated API testing framework for previously untested services.",
+        ],
+        tags: ["AWS", "SSO", "Terraform", "Node.js", "TypeScript", "Docker"],
       },
     ],
   },
@@ -119,19 +172,17 @@ export function Experience() {
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-[#d4d4d4] mb-2">
+                      <h3 className="text-[#5e81ac] mb-2">
                         {selected.position}
                       </h3>
-                      <div className="text-[#5e81ac]">{selected.company}</div>
+                      <div className="text-[#ddc497]">{selected.company}</div>
                     </div>
                     <div className="text-sm text-[#808080]">
                       {selected.period}
                     </div>
                   </div>
 
-                  <p className="text-[#d4d4d4] mb-6 text-sm">
-                    {selected.description}
-                  </p>
+                  <p className="mb-6 text-sm">{selected.description}</p>
 
                   {/* Rotations if they exist */}
                   {selected.rotations &&
@@ -146,18 +197,23 @@ export function Experience() {
                               key={i}
                               className="text-[#d4d4d4] text-sm flex gap-3"
                             >
-                              <span className="text-[#a3be8c] mt-1">▸</span>
+                              <span className="text-[#a3be8c] my-2 ">▪</span>
                               <span>{point}</span>
                             </li>
                           ))}
                         </ul>
                         <div className="flex flex-wrap gap-2">
-                          {rotation.tags.map((tag) => (
+                          {rotation.tags.map((tech) => (
                             <span
-                              key={tag}
-                              className="px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#5e81ac] text-xs"
+                              key={tech}
+                              className="flex items-center gap-3 px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#88c0d0] text-xs rounded-full"
                             >
-                              {tag}
+                              {techIcons[tech] && (
+                                <span className="flex items-center">
+                                  {techIcons[tech]}
+                                </span>
+                              )}
+                              <span>{tech}</span>
                             </span>
                           ))}
                         </div>
@@ -173,19 +229,24 @@ export function Experience() {
                             key={i}
                             className="text-[#d4d4d4] text-sm flex gap-3"
                           >
-                            <span className="text-[#a3be8c] mt-1">▸</span>
+                            <span className="text-[#a3be8c] my-2">▪</span>
                             <span>{point}</span>
                           </li>
                         ))}
                       </ul>
                       {selected.tags && (
                         <div className="flex flex-wrap gap-2">
-                          {selected.tags.map((tag) => (
+                          {selected.tags.map((tech) => (
                             <span
-                              key={tag}
-                              className="px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#5e81ac] text-xs"
+                              key={tech}
+                              className="flex items-center gap-3 px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#88c0d0] text-xs rounded-full"
                             >
-                              {tag}
+                              {techIcons[tech] && (
+                                <span className="flex items-center">
+                                  {techIcons[tech]}
+                                </span>
+                              )}
+                              <span>{tech}</span>
                             </span>
                           ))}
                         </div>
