@@ -83,7 +83,15 @@ const experiences: Experience[] = [
           "Improved internal service reliability by deploying and operationalising \
           an automated API testing framework for previously untested services.",
         ],
-        tags: ["AWS", "SSO", "Terraform", "Node.js", "TypeScript", "Docker"],
+        tags: [
+          "AWS",
+          "SSO",
+          "Terraform",
+          "Node.js",
+          "TypeScript",
+          "Docker",
+          "Databases",
+        ],
       },
     ],
   },

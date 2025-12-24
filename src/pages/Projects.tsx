@@ -9,16 +9,14 @@ import {
   FaBrain,
   FaMemory,
   FaBluetooth,
+  FaDatabase,
 } from "react-icons/fa";
 import {
   SiTypescript,
   SiMongodb,
-  SiPostgresql,
-  SiRedis,
   SiCplusplus,
   SiHtml5,
   SiCss3,
-  SiSocketdotio,
   SiOpencv,
   SiJavascript,
   SiBlender,
@@ -29,7 +27,9 @@ import {
   SiKotlin,
   SiTerraform,
   SiAmazoncognito,
+  SiLoopback,
 } from "react-icons/si";
+import { PiGear, PiGraph } from "react-icons/pi";
 import { SlGraph } from "react-icons/sl";
 import { PageTransition } from "../components/PageTransition";
 
@@ -63,6 +63,10 @@ export const techIcons: Record<string, Element> = {
   Bluetooth: <FaBluetooth size={14} />,
   Terraform: <SiTerraform size={14} />,
   SSO: <SiAmazoncognito size={14} />,
+  Databases: <FaDatabase size={14} />,
+  "Graph Theory": <PiGraph size={14} />,
+  Optimisation: <PiGear size={14} />,
+  "Dynamic Programming": <SiLoopback size={14} />,
 };
 
 const projects = [
@@ -71,7 +75,15 @@ const projects = [
     description:
       "Web-based circuit simulator with drag-and-drop components and real-time simulation. \
       Built with a vanilla JavaScript frontend and a C++ websocket Backend.",
-    tech: ["C++", "JavaScript", "HTML/CSS", "Docker", "AWS", "Nginx"],
+    tech: [
+      "C++",
+      "JavaScript",
+      "HTML/CSS",
+      "Docker",
+      "AWS",
+      "Nginx",
+      "Graph Theory",
+    ],
     src: "projects/circuit.png",
     githubUrl: "https://github.com/lazarr1/Electrical-Simulator",
     liveUrl: "https://lulazar.com/circuit",
@@ -96,12 +108,13 @@ const projects = [
     liveUrl: "lulazar.com",
   },
   {
-    title: "Performance Dashboard",
+    title: "Inverted-Pendulum Robot Waiter",
     description:
-      "Analytics dashboard for tracking web application performance metrics and user behavior.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Redis"],
-    githubUrl: "#",
-    liveUrl: "#",
+      "Fully autonomous simulated robot waiter that uses the A* algorithm to plan its path \
+      an extended kalman filter for SLAM and a MPC controller for stabilisation.",
+    tech: ["Graph Theory", "Optimisation", "Dynamic Programming"],
+    src: "projects/kalman_filter.png",
+    githubUrl: "https://github.com/lazarr1/amme5520",
   },
 ];
 
