@@ -10,6 +10,8 @@ import {
   FaMemory,
   FaBluetooth,
   FaDatabase,
+  FaRobot,
+  FaCamera,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -67,6 +69,8 @@ export const techIcons: Record<string, Element> = {
   "Graph Theory": <PiGraph size={14} />,
   Optimisation: <PiGear size={14} />,
   "Dynamic Programming": <SiLoopback size={14} />,
+  Robotics: <FaRobot size={14} />,
+  "Computer Vision": <FaCamera size={14} />,
 };
 
 const projects = [
@@ -112,10 +116,29 @@ const projects = [
     description:
       "Fully autonomous simulated robot waiter that uses the A* algorithm to plan its path \
       an extended kalman filter for SLAM and a MPC controller for stabilisation.",
-    tech: ["Graph Theory", "Optimisation", "Dynamic Programming"],
+    tech: ["Graph Theory", "Optimisation", "Dynamic Programming", "Robotics"],
     src: "projects/kalman_filter.png",
     githubUrl: "https://github.com/lazarr1/amme5520",
   },
+  {
+    title: "Hearts Card Game Cheating Detection",
+    description:
+      'An automatic cheating detector for the card game "Hearts". Uses traditional computer \
+    vision techniques to locate cards in a frame which are then classified with a CNN trained on 140000 card images \
+    and a central "Game Logic" component to detect cheating.',
+    tech: ["Computer Vision", "Python", "Machine Learning", "OpenCV"],
+    src: "projects/cards.png",
+    githubUrl: "https://github.com/lazarr1/amme4710_major",
+  },
+  // {
+  //   title: "Inverted-Pendulum Robot Waiter",
+  //   description:
+  //     "Fully autonomous simulated robot waiter that uses the A* algorithm to plan its path \
+  //     an extended kalman filter for SLAM and a MPC controller for stabilisation.",
+  //   tech: ["Graph Theory", "Optimisation", "Dynamic Programming", "Robotics"],
+  //   src: "projects/kalman_filter.png",
+  //   githubUrl: "https://github.com/lazarr1/amme5520",
+  // },
 ];
 
 export function Projects() {
