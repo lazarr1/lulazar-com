@@ -127,10 +127,11 @@ const experiences: Experience[] = [
 ];
 
 const education = {
-  school: "University Name",
-  degree: "B.S. Computer Science",
-  period: "Mar 2020 - Nov 2023",
-  note: "Graduated with Honors",
+  school: "The University of Sydney",
+  degree: "Bachelor of Engineering Honours (Mechatronics Engineering)",
+  period: "Mar 2020 - Nov 2025",
+  note: "Graduated with first class Honours.",
+  note2: "Dean's List of Excellence in Academic Performance (2022-2024).",
 };
 
 export function Experience() {
@@ -280,6 +281,9 @@ export function Experience() {
               </div>
               <div className="text-sm text-[#808080] italic">
                 {education.note}
+              </div>
+              <div className="text-sm text-[#808080] italic">
+                {education.note2}
               </div>
             </div>
           </div>
