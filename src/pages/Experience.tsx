@@ -136,6 +136,22 @@ const education = {
   awards: "Dean's List of Excellence in Academic Performance (2022-2024).",
 };
 
+const hackathons = [
+    {
+      title: "Cochlear Graduate Hackathon",
+      subtitle: "First place",
+      period: "December 2025",
+      note: "Built a MERN stack real-time web dashboard displaying the operational status of manufacturing machines, enabling faster issue detection and \
+            improving production visibility for the manufacturing team, with the aims of increasing utilisation of manufacturing machines to 80\%.",
+    },
+    {
+      title: "Cochlear Cloud Team Hackathon",
+      subtitle: "",
+      period: "March 2025",
+      note: "Implemented Dependabot across internal Git repositories to reduce developer maintenance overhead and improve dependency security.",
+    },
+];
+
 export function Experience() {
   const [selectedId, setSelectedId] = useState(experiences[0].id);
   const selected =
@@ -150,7 +166,9 @@ export function Experience() {
               <span className="text-[#808080]">user@portfolio:~</span> cat
               experience.log
             </div>
-            <h2>Work Experience</h2>
+            <h2 className="text-[#5e81ac]">
+              Work Experience
+            </h2>
           </div>
 
           <div className="flex gap-6 mb-16">
@@ -269,14 +287,14 @@ export function Experience() {
             </div>
           </div>
 
-          <div className="opacity-0 animate-fadeInUp delay-400 pb-12">
+          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
             <div className="mb-6">
               <h3>Education</h3>
             </div>
             <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
               <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
                 <div>
-                  <h3 className="text-[#d4d4d4] mb-1">{education.degree}</h3>
+                  <h3 className="text-[#a3be8c] mb-1">{education.degree}</h3>
                   <div className="text-[#88c0d0]">{education.school}</div>
                 </div>
                 <div className="text-sm text-[#808080]">{education.period}</div>
@@ -289,6 +307,25 @@ export function Experience() {
               </div>
             </div>
           </div>
+          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
+            <div className="mb-6">
+              <h3>Hackathons & Competitions</h3>
+            </div>
+            {hackathons.map((hackathon) =>
+            <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
+              <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
+                <div>
+                  <h3 className="text-[#a3be8c] mb-1">{hackathon.title}</h3>
+                  <div className="text-[#88c0d0] text-sm">{hackathon.subtitle}</div>
+                </div>
+                <div className="text-sm text-[#808080]">{hackathon.period}</div>
+              </div>
+              <div className="text-sm text-[#808080] italic">
+                {hackathon.note}
+              </div>
+            </div>
+          )}
+        </div>
         </div>
       </section>
     </PageTransition>
