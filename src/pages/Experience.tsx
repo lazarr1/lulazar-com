@@ -163,7 +163,7 @@ export function Experience() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="mb-8 opacity-0 animate-slideInLeft">
             <div className="text-[#a3be8c] mb-4">
-              <span className="text-[#808080]">user@portfolio:~</span> cat
+              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat
               experience.log
             </div>
             <h2 className="text-[#5e81ac]">
