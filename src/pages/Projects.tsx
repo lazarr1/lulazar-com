@@ -110,8 +110,7 @@ const projects = [
   {
     title: "Developer Porfolio",
     description:
-      "Personal website to showcase my projects, skills and experience as an engineer. \
-    Features an interactive terminal with a hidden easter egg.",
+      "Personal website to showcase my projects, skills and experience as a software engineer.",
     tech: ["TypeScript", "React", "TailwindCSS", "Nginx", "AWS"],
     src: "projects/developer.png",
     githubUrl: "https://github.com/lazarr1/lulazar-com",
