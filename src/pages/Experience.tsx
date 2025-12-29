@@ -100,15 +100,16 @@ const experiences: Experience[] = [
     company: "Cochlear",
     type: "Contract",
     position: "Software Engineer",
-    period: "Jun 2024 - Feb 2025",
+    period: "Feb 2024 - Feb 2025",
     description:
-      "Contract position working on various software development projects.",
+      "Continued working on the Cochlear's Sound Processor firmware for a year following my internship, while \
+      finishing off my studies.",
     points: [
-      "Contributed to the development of medical device software",
-      "Worked with cross-functional teams on product features",
-      "Implemented testing and quality assurance processes",
+      "Architected a custom debug firmware build for Cochlear Sound Processors, collaborating with multiple cross-functional \
+      teams to define logging formats, priorities, and a feature set",
+      "Implemented a new BLE characteristic for the C6 chip and conducted end-to-end validation using BLE sniffers.",
     ],
-    tags: ["C++", "Python", "Medical Devices"],
+    tags: ["C", "Python", "Debugging", "Firmware"],
   },
   {
     id: "cochlear-intern",
@@ -131,7 +132,7 @@ const education = {
   degree: "Bachelor of Engineering Honours (Mechatronics Engineering)",
   period: "Feb 2020 - Nov 2024",
   note: "Graduated with first class Honours.",
-  note2: "Dean's List of Excellence in Academic Performance (2022-2024).",
+  awards: "Dean's List of Excellence in Academic Performance (2022-2024).",
 };
 
 export function Experience() {
@@ -283,7 +284,7 @@ export function Experience() {
                 {education.note}
               </div>
               <div className="text-sm text-[#808080] italic">
-                {education.note2}
+                {education.awards}
               </div>
             </div>
           </div>

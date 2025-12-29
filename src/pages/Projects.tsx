@@ -12,6 +12,7 @@ import {
   FaDatabase,
   FaRobot,
   FaCamera,
+  FaBug,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -30,9 +31,11 @@ import {
   SiTerraform,
   SiAmazoncognito,
   SiLoopback,
+  SiC
 } from "react-icons/si";
 import { PiGear, PiGraph } from "react-icons/pi";
 import { SlGraph } from "react-icons/sl";
+import { IoHardwareChip } from "react-icons/io5"
 import { PageTransition } from "../components/PageTransition";
 
 export const techIcons: Record<string, Element> = {
@@ -71,6 +74,9 @@ export const techIcons: Record<string, Element> = {
   "Dynamic Programming": <SiLoopback size={14} />,
   Robotics: <FaRobot size={14} />,
   "Computer Vision": <FaCamera size={14} />,
+  Debugging: <FaBug size={14} />,
+  C: <SiC size={14} />,
+  Firmware: <IoHardwareChip size={14} />,
 };
 
 const projects = [
