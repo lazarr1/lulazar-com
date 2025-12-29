@@ -118,12 +118,13 @@ const experiences: Experience[] = [
     position: "Software Engineering Intern",
     period: "Nov 2023 - Feb 2024",
     description: "Summer internship working on embedded systems and firmware.",
-    points: [
-      "Developed firmware for hearing implant devices",
-      "Participated in code reviews and testing",
-      "Learned embedded systems development practices",
+    points: [ 
+      "Implemented a classifier to detect misalignment between the external Sound Processor and Cochlear Implant, \
+      automating data collection and analysis in Python, ultimately achieving a 94% detection accuracy",
+      "Directed the algorithm development process and synthesized insights from over 10,000 data points into clear, \
+      data-driven presentations that persuaded internal stakeholders and facilitated adoption.",
     ],
-    tags: ["C", "Embedded Systems", "Firmware"],
+    tags: ["C", "Python", "Firmware", "Data Analysis"],
   },
 ];
 
