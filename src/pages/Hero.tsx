@@ -10,7 +10,7 @@ import {
 export function Hero() {
   return (
     <PageTransition>
-      <section className="min-h-screen flex items-center justify-center px-4 pt-20">
+      <section className="min-h-screen flex items-center justify-center px-4">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 opacity-0 animate-fadeInUp">
             <div className="text-[#dfbfff] mb-4">
@@ -38,9 +38,6 @@ export function Hero() {
             >
               Contact
             </Link>
-          </div>
-
-          <div className="mt-12 text-[#808080] opacity-0 animate-fadeInUp delay-400">
           </div>
         </div>
       </section>
