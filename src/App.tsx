@@ -6,7 +6,7 @@ import { Hero } from "./pages/Hero";
 import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
 import { Experience } from "./pages/Experience";
-import { Contact } from "./pages/Contact";
+import { Socials } from "./pages/Contact";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -18,7 +18,6 @@ function AnimatedRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/experience" element={<Experience />} />
-        <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>
   );
@@ -31,6 +30,7 @@ export default function App() {
         <Navigation />
         <AnimatedRoutes />
         <Terminal />
+        <Socials />
       </div>
     </Router>
   );

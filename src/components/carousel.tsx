@@ -59,7 +59,7 @@ export function ImageCarousel({ images }: Props) {
           onClick={prev}
           disabled={index === 0}
           aria-label="Previous images"
-          className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+          className="text-9xl px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
         >
           ←
         </button>
@@ -84,7 +84,7 @@ export function ImageCarousel({ images }: Props) {
           onClick={next}
           disabled={index === maxIndex}
           aria-label="Next images"
-          className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+          className="text-9xl px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
         >
           →
         </button>
