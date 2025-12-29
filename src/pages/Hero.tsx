@@ -41,16 +41,6 @@ export function Hero() {
           </div>
 
           <div className="mt-12 text-[#808080] opacity-0 animate-fadeInUp delay-400">
-            <div className="flex gap-2 mb-2">
-              <span className="text-[#a3be8c]">$</span>
-              <span className="text-[#dfbfff]">ls socials/</span>
-            </div>
-            <div className="pl-4 text-sm flex col gap-4 items-center">
-              <GitHubButton />
-              <LinkedInButton />
-              <EmailButton />
-              <ResumeButton />
-            </div>
           </div>
         </div>
       </section>
