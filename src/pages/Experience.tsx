@@ -129,7 +129,7 @@ const experiences: Experience[] = [
 const education = {
   school: "The University of Sydney",
   degree: "Bachelor of Engineering Honours (Mechatronics Engineering)",
-  period: "Mar 2020 - Nov 2025",
+  period: "Feb 2020 - Nov 2024",
   note: "Graduated with first class Honours.",
   note2: "Dean's List of Excellence in Academic Performance (2022-2024).",
 };
