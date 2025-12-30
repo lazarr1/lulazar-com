@@ -10,7 +10,7 @@ import {
 export function Hero() {
   return (
     <PageTransition>
-      <section className="min-h-screen flex items-center justify-center px-4 pt-20">
+      <section className="min-h-screen flex items-center justify-center px-4">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 opacity-0 animate-fadeInUp">
             <div className="text-[#dfbfff] mb-4">
@@ -27,30 +27,17 @@ export function Hero() {
 
           <div className="flex gap-3 flex-wrap opacity-0 animate-fadeInUp delay-200">
             <Link
-              to="/projects"
+              to="/experience"
               className="px-6 py-3 bg-[#a3be8c] text-[#1e1e1e] hover:bg-[#b8d8a0] transition-colors"
             >
-              View Projects
+              Experience
             </Link>
             <Link
-              to="/contact"
+              to="/projects"
               className="px-6 py-3 border border-[#a3be8c] text-[#a3be8c] hover:bg-[#a3be8c]/10 transition-colors"
             >
-              Contact
+              Projects
             </Link>
-          </div>
-
-          <div className="mt-12 text-[#808080] opacity-0 animate-fadeInUp delay-400">
-            <div className="flex gap-2 mb-2">
-              <span className="text-[#a3be8c]">$</span>
-              <span className="text-[#dfbfff]">ls socials/</span>
-            </div>
-            <div className="pl-4 text-sm flex col gap-4 items-center">
-              <GitHubButton />
-              <LinkedInButton />
-              <EmailButton />
-              <ResumeButton />
-            </div>
           </div>
         </div>
       </section>

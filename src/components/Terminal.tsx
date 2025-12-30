@@ -12,7 +12,6 @@ const routes = {
   'about': '/about',
   'projects': '/projects',
   'experience': '/experience',
-  'contact': '/contact',
 };
 
 const helpText = `Available commands:

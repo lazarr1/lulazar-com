@@ -100,15 +100,16 @@ const experiences: Experience[] = [
     company: "Cochlear",
     type: "Contract",
     position: "Software Engineer",
-    period: "Jun 2024 - Feb 2025",
+    period: "Feb 2024 - Feb 2025",
     description:
-      "Contract position working on various software development projects.",
+      "Continued working on the Cochlear's Sound Processor firmware for a year following my internship, while \
+      finishing off my studies.",
     points: [
-      "Contributed to the development of medical device software",
-      "Worked with cross-functional teams on product features",
-      "Implemented testing and quality assurance processes",
+      "Architected a custom debug firmware build for Cochlear Sound Processors, collaborating with multiple cross-functional \
+      teams to define logging formats, priorities, and a feature set",
+      "Implemented a new BLE characteristic for the C6 chip and conducted end-to-end validation using BLE sniffers.",
     ],
-    tags: ["C++", "Python", "Medical Devices"],
+    tags: ["C", "Python", "Debugging", "Firmware"],
   },
   {
     id: "cochlear-intern",
@@ -117,21 +118,39 @@ const experiences: Experience[] = [
     position: "Software Engineering Intern",
     period: "Nov 2023 - Feb 2024",
     description: "Summer internship working on embedded systems and firmware.",
-    points: [
-      "Developed firmware for hearing implant devices",
-      "Participated in code reviews and testing",
-      "Learned embedded systems development practices",
+    points: [ 
+      "Implemented a classifier to detect misalignment between the external Sound Processor and Cochlear Implant, \
+      automating data collection and analysis in Python, ultimately achieving a 94% detection accuracy",
+      "Directed the algorithm development process and synthesized insights from over 10,000 data points into clear, \
+      data-driven presentations that persuaded internal stakeholders and facilitated adoption.",
     ],
-    tags: ["C", "Embedded Systems", "Firmware"],
+    tags: ["C", "Python", "Firmware", "Data Analysis"],
   },
 ];
 
 const education = {
-  school: "University Name",
-  degree: "B.S. Computer Science",
-  period: "Mar 2020 - Nov 2023",
-  note: "Graduated with Honors",
+  school: "The University of Sydney",
+  degree: "Bachelor of Engineering Honours (Mechatronics Engineering)",
+  period: "Feb 2020 - Nov 2024",
+  note: "Graduated with first class Honours.",
+  awards: "Dean's List of Excellence in Academic Performance (2022-2024).",
 };
+
+const hackathons = [
+    {
+      title: "Cochlear Graduate Hackathon",
+      subtitle: "First place",
+      period: "December 2025",
+      note: "Built a MERN stack real-time web dashboard displaying the operational status of manufacturing machines, enabling faster issue detection and \
+            improving production visibility for the manufacturing team, with the aims of increasing utilisation of manufacturing machines to 80\%.",
+    },
+    {
+      title: "Cochlear Cloud Team Hackathon",
+      subtitle: "",
+      period: "March 2025",
+      note: "Implemented Dependabot across internal Git repositories to reduce developer maintenance overhead and improve dependency security.",
+    },
+];
 
 export function Experience() {
   const [selectedId, setSelectedId] = useState(experiences[0].id);
@@ -144,10 +163,12 @@ export function Experience() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="mb-8 opacity-0 animate-slideInLeft">
             <div className="text-[#dfbfff] mb-4">
-              <span className="text-[#808080]">user@portfolio:~</span> cat
+              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat
               experience.log
             </div>
-            <h2>Work Experience</h2>
+            <h2 className="text-[#5e81ac]">
+              Work Experience
+            </h2>
           </div>
 
           <div className="flex gap-6 mb-16">
@@ -266,14 +287,14 @@ export function Experience() {
             </div>
           </div>
 
-          <div className="opacity-0 animate-fadeInUp delay-400 pb-12">
+          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
             <div className="mb-6">
               <h3>Education</h3>
             </div>
             <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
               <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
                 <div>
-                  <h3 className="text-[#d4d4d4] mb-1">{education.degree}</h3>
+                  <h3 className="text-[#a3be8c] mb-1">{education.degree}</h3>
                   <div className="text-[#88c0d0]">{education.school}</div>
                 </div>
                 <div className="text-sm text-[#808080]">{education.period}</div>
@@ -281,8 +302,30 @@ export function Experience() {
               <div className="text-sm text-[#808080] italic">
                 {education.note}
               </div>
+              <div className="text-sm text-[#808080] italic">
+                {education.awards}
+              </div>
             </div>
           </div>
+          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
+            <div className="mb-6">
+              <h3>Hackathons & Competitions</h3>
+            </div>
+            {hackathons.map((hackathon) =>
+            <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
+              <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
+                <div>
+                  <h3 className="text-[#a3be8c] mb-1">{hackathon.title}</h3>
+                  <div className="text-[#88c0d0] text-sm">{hackathon.subtitle}</div>
+                </div>
+                <div className="text-sm text-[#808080]">{hackathon.period}</div>
+              </div>
+              <div className="text-sm text-[#808080] italic">
+                {hackathon.note}
+              </div>
+            </div>
+          )}
+        </div>
         </div>
       </section>
     </PageTransition>
