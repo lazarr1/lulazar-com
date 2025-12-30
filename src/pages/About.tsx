@@ -15,7 +15,7 @@ export function About() {
             <h2 className="text-[#5e81ac]">About Me</h2>
           </div>
 
-          <div className="space-y-4 mb-12 text-sm">
+          <div className="space-y-4 mb-12 text-base">
             <p className="opacity-0 animate-fadeInUp delay-100">
               Hello, I'm Luke! 🦕
             </p>
@@ -44,7 +44,7 @@ export function About() {
             <div className="mb-6 opacity-0 animate-slideInLeft">
               <h2 className="text-[#5e81ac]">Hobbies & Interests</h2>
             </div>
-            <ul className="space-y-1 mb-12 pl-24">
+            <ul className="space-y-1 mb-12 pl-24 text-base">
               <li className="flex gap-3 pl-24">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🚶‍♂️ Hikes</span>
