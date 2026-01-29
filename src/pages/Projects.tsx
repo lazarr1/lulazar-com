@@ -13,6 +13,8 @@ import {
   FaRobot,
   FaCamera,
   FaBug,
+  FaSync,
+  FaServer
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -33,10 +35,12 @@ import {
   SiLoopback,
   SiC
 } from "react-icons/si";
+import { CgGitFork } from "react-icons/cg";
 import { PiGear, PiGraph } from "react-icons/pi";
 import { SlGraph } from "react-icons/sl";
 import { IoHardwareChip } from "react-icons/io5"
 import { PageTransition } from "../components/PageTransition";
+import { GiElectricalSocket } from "react-icons/gi";
 
 export const techIcons: Record<string, Element> = {
   Python: <FaPython size={14} />,
@@ -46,6 +50,7 @@ export const techIcons: Record<string, Element> = {
   "Next.js": <SiTypescript size={14} />,
   TypeScript: <SiTypescript size={14} />,
   "C++": <SiCplusplus size={14} />,
+  "C++20": <SiCplusplus size={14} />,
   JavaScript: <SiJavascript size={14} />,
   "HTML/CSS": (
     <span className="flex gap-0.5 items-center">
@@ -77,6 +82,10 @@ export const techIcons: Record<string, Element> = {
   Debugging: <FaBug size={14} />,
   C: <SiC size={14} />,
   Firmware: <IoHardwareChip size={14} />,
+  "Boost Asio": <FaSync size={14}/>,
+  "Threading": <CgGitFork size={14}/>,
+  "Sockets": <GiElectricalSocket size={14}/>,
+  "Servers": <FaServer size={14}/>,
 };
 
 const projects = [
@@ -126,6 +135,16 @@ const projects = [
     githubUrl: "https://github.com/lazarr1/amme5520",
   },
   {
+    title: "WebSocket Server",
+    description:
+      "Multi-threaded C++ websocket server layer built on top of Boost Asio and Boost beast \
+       built to handle multiple clients, handling all Socket I/O, allowing users to build application logic \
+       rather than focusing on the server layer.",
+    tech: ["C++20", "Boost Asio", "Threading", "Sockets", "Servers"],
+    src: "projects/websocketServer.png",
+    githubUrl: "https://github.com/lazarr1/ws-dispatcher",
+  },
+  {
     title: "Hearts Card Game Cheating Detection",
     description:
       'An automatic cheating detector for the card game "Hearts". Uses traditional computer \
@@ -135,15 +154,6 @@ const projects = [
     src: "projects/cards.png",
     githubUrl: "https://github.com/lazarr1/amme4710_major",
   },
-  // {
-  //   title: "Inverted-Pendulum Robot Waiter",
-  //   description:
-  //     "Fully autonomous simulated robot waiter that uses the A* algorithm to plan its path \
-  //     an extended kalman filter for SLAM and a MPC controller for stabilisation.",
-  //   tech: ["Graph Theory", "Optimisation", "Dynamic Programming", "Robotics"],
-  //   src: "projects/kalman_filter.png",
-  //   githubUrl: "https://github.com/lazarr1/amme5520",
-  // },
 ];
 
 export function Projects() {
