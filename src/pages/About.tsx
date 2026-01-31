@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ImageCarousel } from "../components/carousel";
 import { PageTransition } from "../components/PageTransition";
+import { Socials } from "./Contact";
 
 export function About() {
   return (
@@ -123,6 +124,7 @@ export function About() {
           </div>
         </div>
       </section>
+    <Socials />
     </PageTransition>
   );
 }

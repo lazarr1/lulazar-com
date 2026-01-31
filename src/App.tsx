@@ -30,7 +30,6 @@ export default function App() {
         <Navigation />
         <AnimatedRoutes />
         <Terminal />
-        <Socials />
       </div>
     </Router>
   );

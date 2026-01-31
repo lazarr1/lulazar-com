@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { PageTransition } from "../components/PageTransition";
+import { Socials } from "./Contact";
 import {
   GitHubButton,
   LinkedInButton,
@@ -41,6 +42,7 @@ export function Hero() {
           </div>
         </div>
       </section>
+      <Socials />
     </PageTransition>
   );
 }

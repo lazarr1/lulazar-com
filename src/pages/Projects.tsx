@@ -1,3 +1,4 @@
+import { Socials } from "./Contact";
 import { ExternalLink } from "lucide-react";
 import {
   FaGithub,
