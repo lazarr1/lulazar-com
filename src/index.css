@@ -972,6 +972,12 @@
       width: 600px;
     }
   }
+
+  @media (width >=48rem) {
+    .md\:flex {
+      display: flex !important;
+    }
+  }
 }
 
 
@@ -1026,6 +1032,10 @@
   --ring: #a3be8c;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
+}
+
+.hidden {
+  display: none;
 }
 
 html {

@@ -18,7 +18,7 @@ export function Navigation() {
         >
           &lt;lulazar.com /&gt;
         </Link>
-        <div className="flex gap-6">
+        <div className="hidden md:flex gap-6">
           {navItems.map((item) => (
             <Link
               key={item.path}
