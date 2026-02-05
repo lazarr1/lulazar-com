@@ -51,43 +51,48 @@ export function ImageCarousel({ images }: Props) {
             </li>
           ))}
         </ul>
+        {/* DOTS (overlayed centered over images) */}
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-4 z-10 pointer-events-auto">
+          <div className="flex items-center gap-3">
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                aria-label={`Go to image ${i + 1}`}
+                className={`w-3 h-3 rounded-full transition-colors focus:outline-none ${
+                  i === index ? "bg-gray-800" : "bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* CONTROLS */}
-      <div className="mt-6 flex justify-center gap-4">
-        <button
-          onClick={prev}
-          disabled={index === 0}
-          aria-label="Previous images"
-          className="text-9xl px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-        >
-          ←
-        </button>
+      {/* (Dots moved into viewport) */}
 
-        {/* DOTS */}
-        <div className="mt-4 flex justify-center gap-3 text-9xl">
-          {Array.from({ length: images.length - 3 }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`rounded-full text-9xl transition-colors ${
-                i === index ? "text-[#808080]" : ""
-              }`}
-              aria-label={`Go to image ${i + 1}`}
-            >
-              •
-            </button>
-          ))}
+      {/* ARROWS (overlayed on images) */}
+      <div className="pointer-events-none">
+        <div className="relative">
+          <button
+            onClick={prev}
+            onMouseEnter={prev}
+            disabled={index === 0}
+            aria-label="Previous images"
+            className="pointer-events-auto absolute left-2 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white opacity-70 hover:opacity-100 disabled:opacity-30 disabled:cursor-default"
+          >
+            ‹
+          </button>
+
+          <button
+            onClick={next}
+            onMouseEnter={next}
+            disabled={index === maxIndex}
+            aria-label="Next images"
+            className="pointer-events-auto absolute right-2 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white opacity-70 hover:opacity-100 disabled:opacity-30 disabled:cursor-default"
+          >
+            ›
+          </button>
         </div>
-
-        <button
-          onClick={next}
-          disabled={index === maxIndex}
-          aria-label="Next images"
-          className="text-9xl px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-        >
-          →
-        </button>
       </div>
     </section>
   );

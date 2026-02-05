@@ -7,7 +7,7 @@ export function About() {
   return (
     <PageTransition>
       <section className="min-h-screen px-4 py-24">
-        <div className="max-w-3xl mx-auto w-full">
+        <div className="max-w-3l mx-auto w-full">
           <div className="mb-6 opacity-0 animate-slideInLeft">
             <div className="text-[#dfbfff] mb-4">
               <span className="text-[#808080]">lukelazar@portfolio:~</span>{" "}
@@ -46,7 +46,7 @@ export function About() {
               <h2 className="text-[#5e81ac]">Hobbies & Interests</h2>
             </div>
             <ul className="space-y-1 mb-12 pl-24 text-base">
-              <li className="flex gap-3 pl-24">
+              <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🚶‍♂️ Hikes</span>
               </li>

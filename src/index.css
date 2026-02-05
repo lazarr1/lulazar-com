@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import "tailwindcss";
 
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
@@ -515,10 +516,17 @@
     display: flex;
   }
 
+  .flex-col {
+    flex-direction: col;
+  }
+
   .grid {
     display: grid;
   }
 
+  .h-0.\5{
+    height: calc(var(--spacing) * 0.5);
+  }
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
@@ -537,6 +545,10 @@
 
   .w-64 {
     width: calc(var(--spacing) * 64);
+  }
+
+  .w-6 {
+    width: calc(var(--spacing) * 6);
   }
 
   .w-full {
@@ -597,6 +609,10 @@
 
   .gap-3 {
     gap: calc(var(--spacing) * 3);
+  }
+
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
   }
 
   .gap-4 {
@@ -976,6 +992,12 @@
   @media (width >=48rem) {
     .md\:flex {
       display: flex !important;
+    }
+  }
+
+  @media (width >=48rem) {
+    .md\:hidden {
+      display: none;
     }
   }
 }
