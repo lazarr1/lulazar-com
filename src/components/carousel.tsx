@@ -51,47 +51,45 @@ export function ImageCarousel({ images }: Props) {
             </li>
           ))}
         </ul>
-        {/* DOTS (overlayed centered over images) */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-4 z-10 pointer-events-auto">
-          <div className="flex items-center gap-3">
-            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                aria-label={`Go to image ${i + 1}`}
-                className={`w-3 h-3 rounded-full transition-colors focus:outline-none ${
-                  i === index ? "bg-gray-800" : "bg-gray-300"
-                }`}
-              />
-            ))}
+        {/* ARROWS (overlayed centered vertically over images) */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 w-full pointer-events-none">
+          <div className="pointer-events-auto flex items-center justify-between px-4">
+            <button
+              onClick={prev}
+              onMouseEnter={prev}
+              disabled={index === 0}
+              aria-label="Previous images"
+              className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white opacity-70 hover:opacity-100 disabled:opacity-30 disabled:cursor-default"
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={next}
+              onMouseEnter={next}
+              disabled={index === maxIndex}
+              aria-label="Next images"
+              className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white opacity-70 hover:opacity-100 disabled:opacity-30 disabled:cursor-default"
+            >
+              ›
+            </button>
           </div>
         </div>
       </div>
 
-      {/* (Dots moved into viewport) */}
-
-      {/* ARROWS (overlayed on images) */}
-      <div className="pointer-events-none">
-        <div className="relative">
-          <button
-            onClick={prev}
-            onMouseEnter={prev}
-            disabled={index === 0}
-            aria-label="Previous images"
-            className="pointer-events-auto absolute left-2 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white opacity-70 hover:opacity-100 disabled:opacity-30 disabled:cursor-default"
-          >
-            ‹
-          </button>
-
-          <button
-            onClick={next}
-            onMouseEnter={next}
-            disabled={index === maxIndex}
-            aria-label="Next images"
-            className="pointer-events-auto absolute right-2 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white opacity-70 hover:opacity-100 disabled:opacity-30 disabled:cursor-default"
-          >
-            ›
-          </button>
+      {/* DOTS (below images) */}
+      <div className="mt-4 flex justify-center">
+        <div className="flex items-center gap-3">
+          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              aria-label={`Go to image ${i + 1}`}
+              className={`w-3 h-3 rounded-full transition-colors focus:outline-none ${
+                i === index ? "bg-gray-800" : "bg-gray-300"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
