@@ -993,6 +993,9 @@
     .md\:flex {
       display: flex !important;
     }
+    .md\:block{
+      display: block !important;
+    }
   }
 
   @media (width >=48rem) {

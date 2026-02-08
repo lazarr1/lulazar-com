@@ -115,7 +115,7 @@ const experiences: Experience[] = [
     id: "cochlear-intern",
     company: "Cochlear",
     type: "Internship",
-    position: "Software Engineering Intern",
+    position: "Software Engineer Intern",
     period: "Nov 2023 - Feb 2024",
     description: "Summer internship working on embedded systems and firmware.",
     points: [ 
@@ -161,171 +161,143 @@ export function Experience() {
     <PageTransition>
       <section className="min-h-screen px-4 py-24">
         <div className="max-w-7xl mx-auto w-full">
+          {/* Header */}
           <div className="mb-8 opacity-0 animate-slideInLeft">
             <div className="text-[#dfbfff] mb-4">
-              <span className="text-[#808080]">lukelazar@portfolio:~</span> cat
-              experience.log
+              <span className="text-[#808080]">
+                lukelazar@portfolio:~
+              </span>{" "}
+              cat experience.log
             </div>
-            <h2 className="text-[#5e81ac]">
-              Work Experience
-            </h2>
+            <h2 className="text-[#5e81ac]">Work Experience</h2>
           </div>
 
-          <div className="flex gap-6 mb-16">
-            {/* Left sidebar - List of experiences */}
-            <div className="w-64 flex-shrink-0 opacity-0 animate-fadeInUp delay-100">
+          <div className="flex flex-col md:flex-row gap-6 mb-16">
+            {/* ================= MOBILE SELECT (SM ONLY) ================= */}
+            <div className="md:hidden">
+              <select
+                value={selectedId}
+                onChange={(e) => setSelectedId(e.target.value)}
+                className="w-full px-4 py-3 bg-[#252526] border border-[#3a3a3a] text-[#d4d4d4] rounded"
+              >
+                {experiences.map((exp) => (
+                  <option key={exp.id} value={exp.id}>
+                    {exp.company} – {exp.position}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* ================= DESKTOP SIDEBAR (MD+) ================= */}
+            <div className="hidden md:block w-64 flex-shrink-0">
               <div className="border border-[#3a3a3a] bg-[#252526]">
                 {experiences.map((exp) => (
                   <button
                     key={exp.id}
                     onClick={() => setSelectedId(exp.id)}
-                    className={`w-full text-left px-4 py-3 border-b border-[#3a3a3a] last:border-b-0 transition-colors ${
+                    className={`w-full text-left px-4 py-3 border-b border-[#3a3a3a] transition-colors ${
                       selectedId === exp.id
                         ? "bg-[#2a2a3a] border-l-4 border-l-[#a3be8c]"
                         : "hover:bg-[#2a2a3a]"
                     }`}
                   >
-                    <div className="text-[#d4d4d4] text-sm mb-1">
+                    <div className="text-[#d4d4d4] text-sm">
                       {exp.company}
                     </div>
-                    <div className="text-[#808080] text-xs">{exp.type}</div>
+                    <div className="text-[#808080] text-xs">
+                      {exp.type}
+                    </div>
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Right panel - Selected experience details */}
-            <div className="flex-1 opacity-0 animate-fadeInUp delay-200">
-              <div className="border border-[#3a3a3a] bg-[#252526] overflow-hidden">
-                {/* Content */}
+            {/* ================= RIGHT PANEL ================= */}
+            <div className="flex-1">
+              <div className="border border-[#3a3a3a] bg-[#252526]">
                 <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-[#5e81ac] mb-2">
+                  {/* Header (fixed layout) */}
+                  <div className="mb-6">
+                    <div className="relative overflow-x-auto whitespace-nowrap">
+                      <h3 className="text-[#5e81ac] text-lg inline-block pr-12">
                         {selected.position}
                       </h3>
-                      <div className="text-[#ddc497]">{selected.company}</div>
+                      <div className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-[#252526] to-transparent" />
                     </div>
-                    <div className="text-sm text-[#808080]">
-                      {selected.period}
+
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm">
+                      <span className="text-[#ddc497]">
+                        {selected.company}
+                      </span>
+                      <span className="text-[#808080]">
+                        {selected.period}
+                      </span>
                     </div>
                   </div>
 
-                  <p className="mb-6 text-sm">{selected.description}</p>
+                  <p className="mb-6 text-sm">
+                    {selected.description}
+                  </p>
 
-                  {/* Rotations if they exist */}
+                  {/* Rotations */}
                   {selected.rotations &&
-                    selected.rotations.map((rotation, index) => (
-                      <div key={index} className="mb-6">
+                    selected.rotations.map((rotation, idx) => (
+                      <div key={idx} className="mb-8">
                         <h4 className="text-[#a3be8c] mb-4 text-sm">
                           {rotation.title}
                         </h4>
                         <ul className="space-y-3 mb-4">
                           {rotation.points.map((point, i) => (
-                            <li
-                              key={i}
-                              className="text-[#d4d4d4] text-sm flex gap-3"
-                            >
-                              <span className="text-[#a3be8c] my-2 ">▪</span>
+                            <li key={i} className="flex gap-3 text-sm">
+                              <span className="text-[#a3be8c]">▪</span>
                               <span>{point}</span>
                             </li>
                           ))}
                         </ul>
+
                         <div className="flex flex-wrap gap-2">
                           {rotation.tags.map((tech) => (
                             <span
                               key={tech}
-                              className="flex items-center gap-3 px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#88c0d0] text-xs rounded-full"
+                              className="flex gap-2 px-3 py-1 text-xs rounded-full bg-[#1e1e1e] border border-[#3a3a3a] text-[#88c0d0]"
                             >
-                              {techIcons[tech] && (
-                                <span className="flex items-center">
-                                  {techIcons[tech]}
-                                </span>
-                              )}
-                              <span>{tech}</span>
+                              {techIcons[tech]}
+                              {tech}
                             </span>
                           ))}
                         </div>
                       </div>
                     ))}
 
-                  {/* Regular points if no rotations */}
+                  {/* Non-rotation roles */}
                   {selected.points && (
                     <>
                       <ul className="space-y-3 mb-4">
                         {selected.points.map((point, i) => (
-                          <li
-                            key={i}
-                            className="text-[#d4d4d4] text-sm flex gap-3"
-                          >
-                            <span className="text-[#a3be8c] my-2">▪</span>
+                          <li key={i} className="flex gap-3 text-sm">
+                            <span className="text-[#a3be8c]">▪</span>
                             <span>{point}</span>
                           </li>
                         ))}
                       </ul>
-                      {selected.tags && (
-                        <div className="flex flex-wrap gap-2">
-                          {selected.tags.map((tech) => (
-                            <span
-                              key={tech}
-                              className="flex items-center gap-3 px-3 py-1 bg-[#1e1e1e] border border-[#3a3a3a] text-[#88c0d0] text-xs rounded-full"
-                            >
-                              {techIcons[tech] && (
-                                <span className="flex items-center">
-                                  {techIcons[tech]}
-                                </span>
-                              )}
-                              <span>{tech}</span>
-                            </span>
-                          ))}
-                        </div>
-                      )}
+
+                      <div className="flex flex-wrap gap-2">
+                        {selected.tags?.map((tech) => (
+                          <span
+                            key={tech}
+                            className="flex gap-2 px-3 py-1 text-xs rounded-full bg-[#1e1e1e] border border-[#3a3a3a] text-[#88c0d0]"
+                          >
+                            {techIcons[tech]}
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </>
                   )}
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
-            <div className="mb-6">
-              <h3>Education</h3>
-            </div>
-            <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
-              <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
-                <div>
-                  <h3 className="text-[#a3be8c] mb-1">{education.degree}</h3>
-                  <div className="text-[#88c0d0]">{education.school}</div>
-                </div>
-                <div className="text-sm text-[#808080]">{education.period}</div>
-              </div>
-              <div className="text-sm text-[#808080] italic">
-                {education.note}
-              </div>
-              <div className="text-sm text-[#808080] italic">
-                {education.awards}
-              </div>
-            </div>
-          </div>
-          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
-            <div className="mb-6">
-              <h3>Hackathons & Competitions</h3>
-            </div>
-            {hackathons.map((hackathon) =>
-            <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
-              <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
-                <div>
-                  <h3 className="text-[#a3be8c] mb-1">{hackathon.title}</h3>
-                  <div className="text-[#88c0d0] text-sm">{hackathon.subtitle}</div>
-                </div>
-                <div className="text-sm text-[#808080]">{hackathon.period}</div>
-              </div>
-              <div className="text-sm text-[#808080] italic">
-                {hackathon.note}
-              </div>
-            </div>
-          )}
-        </div>
         </div>
       </section>
     </PageTransition>
