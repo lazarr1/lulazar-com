@@ -47,7 +47,7 @@ export function ImageCarousel({ images }: Props) {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="h-48 w-full object-contain bg-neutral-100 rounded-xl shadow-md ring-1 ring-black/5"
+                  className="h-48 w-full object-contain rounded-xl shadow-md ring-1 ring-black/5"
                 />
               </figure>
             </li>

@@ -6,8 +6,8 @@ import { Socials } from "./Contact";
 export function About() {
   return (
     <PageTransition>
-        <section className="min-h-screen px-4 py-24">
-          <div className="max-w-7xl mx-auto w-full">
+      <section className="min-h-screen px-4 py-24">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="mb-6 opacity-0 animate-slideInLeft">
             <div className="text-[#dfbfff] mb-4">
               <span className="text-[#808080]">lukelazar@portfolio:~</span>{" "}
@@ -49,6 +49,10 @@ export function About() {
               <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
                 <span>🚶‍♂️ Hikes</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[#a3be8c]">▪</span>
+                <span>🛹 Skateboarding </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-[#a3be8c]">▪</span>
@@ -124,9 +128,9 @@ export function About() {
           </div>
         </div>
       </section>
-    <div className="hidden md:block">
-      <Socials />
-    </div>
+      <div className="hidden md:block">
+        <Socials />
+      </div>
     </PageTransition>
   );
 }
