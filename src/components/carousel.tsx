@@ -10,6 +10,8 @@ type Props = {
 };
 
 const VISIBLE_COUNT = 4;
+const ITEM_WIDTH = 100 / VISIBLE_COUNT; // %
+const GAP_PX = 30; // gap-4 = 1rem = 16px
 
 export function ImageCarousel({ images }: Props) {
   const [index, setIndex] = useState(0);
@@ -30,9 +32,9 @@ export function ImageCarousel({ images }: Props) {
         <ul
           className="flex gap-4 transition-transform duration-500 ease-in-out"
           style={{
-            transform: `translateX(-${
-              (100 / VISIBLE_COUNT) * index + 4 * index
-            }%)`,
+            transform: `translateX(calc(-${ITEM_WIDTH * index}% - ${
+              GAP_PX * index
+              }px))`,
           }}
         >
           {images.map((img, i) => (
@@ -45,7 +47,7 @@ export function ImageCarousel({ images }: Props) {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="h-48 w-full object-cover rounded-xl shadow-md ring-1 ring-black/5"
+                  className="h-48 w-full object-contain bg-neutral-100 rounded-xl shadow-md ring-1 ring-black/5"
                 />
               </figure>
             </li>

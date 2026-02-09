@@ -88,27 +88,27 @@ export function About() {
                   alt: "Lego Scout Trooper on 74-Z Speeder Bike",
                 },
                 {
-                  src: "imgs/img2.jpeg",
-                  alt: "Tyler the Creator Concert",
+                  src: "imgs/img10.jpeg",
+                  alt: "Sick ass mountains",
                 },
                 {
                   src: "imgs/img3.jpeg",
                   alt: "Salt bread tray",
                 },
                 {
-                  src: "imgs/img4.jpeg",
+                  src: "imgs/img14.jpeg",
                   alt: "Chill ass lizard chilling on water",
                 },
                 {
-                  src: "imgs/img5.jpeg",
-                  alt: "Cool person walking next to waterfall",
+                  src: "imgs/img13.jpeg",
+                  alt: "Caterpillar",
                 },
                 {
                   src: "imgs/img6.jpeg",
                   alt: "Sweet victory (Cake club winner award)",
                 },
                 {
-                  src: "imgs/img7.jpeg",
+                  src: "imgs/img16.jpeg",
                   alt: "Water cliff",
                 },
                 {
@@ -116,7 +116,7 @@ export function About() {
                   alt: "Tree mountain",
                 },
                 {
-                  src: "imgs/img9.jpeg",
+                  src: "imgs/img15.jpeg",
                   alt: "Poker winnings",
                 },
               ]}
