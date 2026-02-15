@@ -517,7 +517,7 @@
   }
 
   .flex-col {
-    flex-direction: col;
+    flex-direction: column;
   }
 
   .grid {
