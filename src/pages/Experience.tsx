@@ -298,6 +298,46 @@ export function Experience() {
               </div>
             </div>
           </div>
+
+          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
+            <div className="mb-6">
+              <h3>Education</h3>
+            </div>
+            <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
+              <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
+                <div>
+                  <h3 className="text-[#a3be8c] mb-1">{education.degree}</h3>
+                  <div className="text-[#88c0d0]">{education.school}</div>
+                </div>
+                <div className="text-sm text-[#808080]">{education.period}</div>
+              </div>
+              <div className="text-sm text-[#808080] italic">
+                {education.note}
+              </div>
+              <div className="text-sm text-[#808080] italic">
+                {education.awards}
+              </div>
+            </div>
+          </div>
+          <div className="opacity-0 animate-fadeInUp delay-400 pb-12 text-[#5e81ac]">
+            <div className="mb-6">
+              <h3>Hackathons & Competitions</h3>
+            </div>
+            {hackathons.map((hackathon) =>
+            <div className="border border-[#3a3a3a] p-6 bg-[#252526]">
+              <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
+                <div>
+                  <h3 className="text-[#a3be8c] mb-1">{hackathon.title}</h3>
+                  <div className="text-[#88c0d0] text-sm">{hackathon.subtitle}</div>
+                </div>
+                <div className="text-sm text-[#808080]">{hackathon.period}</div>
+              </div>
+              <div className="text-sm text-[#808080] italic">
+                {hackathon.note}
+              </div>
+            </div>
+          )}
+        </div>
         </div>
       </section>
     </PageTransition>
