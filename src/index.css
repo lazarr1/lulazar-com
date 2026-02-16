@@ -996,6 +996,10 @@
     .md\:block{
       display: block !important;
     }
+    .md\:flex-row{
+      display: flex !important;
+      flex-direction: row !important;
+    }
   }
 
   @media (width >=48rem) {
