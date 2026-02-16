@@ -104,7 +104,7 @@ const projects = [
       "Nginx",
       "Graph Theory",
     ],
-    src: "projects/circuit.png",
+    src: "project_images/circuit.png",
     githubUrl: "https://github.com/lazarr1/Electrical-Simulator",
     liveUrl: "https://lulazar.com/circuit",
   },
@@ -114,7 +114,7 @@ const projects = [
       "A machine learning–based imaging system that studies how to capture clear images in \
       space despite extreme lighting conditions: from bright sunlight to deep shadow.",
     tech: ["Machine Learning", "Python", "OpenCV", "Blender"],
-    src: "projects/satellite.png",
+    src: "project_images/satellite.png",
     githubUrl: "https://github.com/lazarr1/ExposureNet",
   },
   {
@@ -122,7 +122,7 @@ const projects = [
     description:
       "Personal website to showcase my projects, skills and experience as a software engineer.",
     tech: ["TypeScript", "React", "TailwindCSS", "Nginx", "AWS"],
-    src: "projects/developer.png",
+    src: "project_images/developer.png",
     githubUrl: "https://github.com/lazarr1/lulazar-com",
     liveUrl: "lulazar.com",
   },
@@ -132,7 +132,7 @@ const projects = [
       "Fully autonomous simulated robot waiter that uses the A* algorithm to plan its path \
       an extended kalman filter for SLAM and a MPC controller for stabilisation.",
     tech: ["Graph Theory", "Optimisation", "Dynamic Programming", "Robotics"],
-    src: "projects/kalman_filter.png",
+    src: "project_images/kalman_filter.png",
     githubUrl: "https://github.com/lazarr1/amme5520",
   },
   {
@@ -142,7 +142,7 @@ const projects = [
        built to handle multiple clients, handling all Socket I/O, allowing users to build application logic \
        rather than focusing on the server layer.",
     tech: ["C++20", "Boost Asio", "Threading", "Sockets", "Servers"],
-    src: "projects/websocketServer.png",
+    src: "project_images/websocketServer.png",
     githubUrl: "https://github.com/lazarr1/ws-dispatcher",
   },
   {
@@ -152,7 +152,7 @@ const projects = [
     vision techniques to locate cards in a frame which are then classified with a CNN trained on 140000 card images \
     and a central "Game Logic" component to detect cheating.',
     tech: ["Computer Vision", "Python", "Machine Learning", "OpenCV"],
-    src: "projects/cards.png",
+    src: "project_images/cards.png",
     githubUrl: "https://github.com/lazarr1/amme4710_major",
   },
 ];
