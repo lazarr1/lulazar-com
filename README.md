@@ -1,8 +1,34 @@
-  # Luke's Developer Portfolio
+# Luke's Developer Portfolio
 
-  ## Running the code
+Personal portfolio site built with React, TypeScript, Vite, and Tailwind CSS.
 
-  Run `npm i` to install the dependencies.
+## Setup
 
-  Run `npm run dev` to start the development server.
-  
+Install dependencies:
+
+```sh
+npm install
+```
+
+## Development
+
+Start the dev server:
+
+```sh
+npm run dev
+```
+
+## Production
+
+Build the site:
+
+```sh
+npm run build
+```
+
+Preview the build:
+
+```sh
+npm run preview
+```
+
