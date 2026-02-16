@@ -133,7 +133,7 @@ const projects = [
       an extended kalman filter for SLAM and a MPC controller for stabilisation.",
     tech: ["Graph Theory", "Optimisation", "Dynamic Programming", "Robotics"],
     src: "project_images/kalman_filter.png",
-    githubUrl: "https://github.com/lazarr1/amme5520",
+    githubUrl: "https://github.com/lazarr1/robowaiter",
   },
   {
     title: "WebSocket Server",
@@ -153,7 +153,6 @@ const projects = [
     and a central "Game Logic" component to detect cheating.',
     tech: ["Computer Vision", "Python", "Machine Learning", "OpenCV"],
     src: "project_images/cards.png",
-    githubUrl: "https://github.com/lazarr1/amme4710_major",
   },
 ];
 
@@ -187,13 +186,13 @@ export function Projects() {
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-[#d4d4d4]">{project.title}</h3>
                   <div className="flex gap-3 ml-4">
-                    <a
+                    {project.githubUrl && (<a
                       href={project.githubUrl}
                       className="text-[#808080] hover:text-[#a3be8c] transition-colors"
                       aria-label="GitHub"
                     >
                       <FaGithub size={20} />
-                    </a>
+                    </a>)}
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
